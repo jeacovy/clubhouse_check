@@ -60,17 +60,17 @@ main() {
 	fi
 
 	# check if the branch path has a shortcut card associated
-	if [[ ${PR_COMMIT_MESSAGES} =~ (\[sc[-0-9](.+)\])([^,]*) ]]
+	if [[ ${PR_COMMIT_MESSAGES} =~ (\[sc[0-9\-](.+)\])([^,]*) ]]
 	then
 		echo "Commit messages contain a shortcut card. You may proceed...this time."
 		remove_shortcut_labels
 		exit 0
-	elif [[ ${GITHUB_REF} =~ (\/sc[-0-9](.+)\/*)([^,]*) ]] || [[ ${PR_HEAD} =~ (\/sc[-0-9](.+)\/*)([^,]*) ]]
+	elif [[ ${GITHUB_REF} =~ (\/sc[0-9\-](.+)\/*)([^,]*) ]] || [[ ${PR_HEAD} =~ (\/sc[0-9\-](.+)\/*)([^,]*) ]]
 	then
 		echo "This branch was clearly created using the shortcut helper."
 		remove_shortcut_labels
 		exit 0
-	elif [[ ${PR_BODY} =~ (\[sc[-0-9](.+)\])([^,]*) ]]
+	elif [[ ${PR_BODY} =~ (\[sc[0-9\-](.+)\])([^,]*) ]]
   then
 		echo "If I said your PR body looked good, would you hold it against me?"
 		remove_shortcut_labels
