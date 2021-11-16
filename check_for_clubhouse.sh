@@ -83,7 +83,7 @@ main() {
   else
   	echo "yo dawg, where da shortcut card at?"
 		add_shortcut_label
-    exit 1
+    exit 0
   fi
 }
 
