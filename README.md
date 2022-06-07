@@ -11,13 +11,14 @@ workflow "Check branch/comment/body format" {
 }
 
 action "Clubhouse Checker" {
-  uses = "newshipt/clubhouse_check@master"
+  uses = "shipt/clubhouse_check@master"
   secrets = ["GITHUB_TOKEN"]
 }
 ```
 
 ### Expected formats:
-BRANCH REF:  */ch***/*
+
+BRANCH REF: \*/ch*\*\*/*
 
 COMMIT MESSAGE: [ch***]
 
